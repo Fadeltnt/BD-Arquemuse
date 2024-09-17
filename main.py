@@ -10,7 +10,7 @@ load_dotenv()
 host = os.environ.get("HOST")
 port = int(os.environ.get("PORT"))
 database = os.environ.get("DATABASE")
-user = os.environ.get("USER")
+user = os.environ.get("USERNAME")
 password = os.environ.get("PASSWORD")
 migration_counter = 0
 
