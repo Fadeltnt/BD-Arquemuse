@@ -5,6 +5,20 @@ import pymysql
 from flask import Flask, redirect, url_for, flash
 from flask_login import LoginManager, current_user
 from auth import User, db_config, get_user_role
+from dotenv import load_dotenv
+import os
+import pymysql
+
+# Charger les variables d'environnement depuis le fichier .env
+load_dotenv()
+
+# Accéder aux variables d'environnement
+DB_HOST = os.getenv('HOST')
+DB_PORT = os.getenv('PORT')
+DB_DATABASE = os.getenv('DATABASE')
+DB_USERNAME = os.getenv('USERNAME')
+DB_PASSWORD = os.getenv('PASSWORD')
+
 
 def create_app():
     app = Flask(__name__)
@@ -49,6 +63,7 @@ def create_app():
     app.register_blueprint(main_blueprint)
 
     return app
+
 
 # Cette ligne est essentielle pour Gunicorn
 app = create_app()
