@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horaire</title>
+    <link rel="stylesheet" href="static/css/AccountPage.css">
+</head>
+<body>
+<div class="container">
+    <div class="header"></div>
+    <div class="sidebar">
+         <header><a href="/"><img src="/static/images/img.png" class="logo"></a></header>
+
+        <ul>
+            <li><a href="ProfesseurHoraire"><i>Horaire</i></a></li>
+            <li><a href="ProfesseurEleves"><i>Eleves</i></a></li>
+            <li><a href="ProfesseurDispo"><i>Disponibilites</i></a></li>
+            <li><a href="/logout"><i>Déconnexion</i></a></li>
+        </ul>
+
+    </div>
+
+<div class="main">
+        <h1><i>Cours</i></h1>
+
+        <h3>Voici votre liste de cours</h3>
+
+        <table class="table">
+
+            <tr class="table__header">
+                {% for header in heading%}
+                <th class="table__cell">{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data %}
+
+            <tr class="table__row">
+                {% for cell in row %}
+                <td class="table__cell">{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

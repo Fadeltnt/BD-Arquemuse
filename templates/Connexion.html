@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <script src = "../static/website.js"></script>
+    <link rel="stylesheet" href="/static/css/CreateAccount.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/"><img src="/static/images/img.png" class="logo" alt=""></a>
+</div>
+
+<div class="login-container">
+    <h2>Connexion</h2>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+    <div class="notification-banner-container">
+        <div class="notification-banner">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endif %}
+    {% endwith %}
+
+    <!-- Formulaire de connexion -->
+    <form action="/login" method="POST">
+        <label for="email"></label>
+        <input id="email" type="email" name="email" placeholder="Adresse e-mail" autocomplete="off" required>
+        <label for="password"></label>
+        <input id="password" type="password" name="password" placeholder="Mot de passe" required>
+        <input type="submit" value="Se Connecter">
+        <p>Vous n'avez pas de compte ? <a href="EtudiantUtilisateur">S'inscrire</a>.</p>
+    </form>
+</div>
+
+<script src="/static/website.js"></script>
+</body>
+</html>

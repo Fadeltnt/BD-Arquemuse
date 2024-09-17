@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/AccountPage.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header"></div>
+    <div class="sidebar">
+        <header><a href="/"><img src="/static/images/img.png" class="logo"></a></header>
+
+        <ul>
+            <li><a href="EtudiantCours"><i>Cours</i></a></li>
+            <li><a href="EtudiantDispo"><i>Dispos</i></a></li>
+            <li><a href="/logout"><i>Déconnexion</i></a></li>
+        </ul>
+
+    </div>
+
+        <div class="main">
+        <h1>Ajouter des disponibilités</h1>
+            {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="notification-banner">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+        <div class="form-container">
+        <form id="availability-form" method="POST" action="/add_availability_etudiant">
+
+        <div class="form-group">
+            <label for="jour">Jour:</label>
+            <select id="jour" name="jour" required>
+            <option value="Lundi">Lundi</option>
+            <option value="Mardi">Mardi</option>
+            <option value="Mercredi">Mercredi</option>
+            <option value="Jeudi">Jeudi</option>
+            <option value="Vendredi">Vendredi</option>
+            <option value="Samedi">Samedi</option>
+            <option value="Dimanche">Dimanche</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="heure_debut">Heure de début:</label>
+            <input type="time" id="heure_debut" name="heure_debut" required>
+        </div>
+
+        <div class="form-group">
+            <label for="heure_fin">Heure de fin:</label>
+            <input type="time" id="heure_fin" name="heure_fin" required>
+        </div>
+
+        <button class="button-send" type="submit"> Envoyer </button>
+        </form></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

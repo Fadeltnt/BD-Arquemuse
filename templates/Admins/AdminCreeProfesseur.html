@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un professeur</title>
+    <link rel="stylesheet" href="/static/css/AccountPage.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header"></div>
+         <div class="sidebar">
+    <header><a href="/"><img src="/static/images/img.png" class="logo"></a></header>
+
+        <ul>
+       <li><a href="AdminEleves"><i>Eleves</i></a></li>
+            <li><a href="AdminElevesDispo"><i>Eleves Dispo</i></a></li>
+            <li><a href="AdminProfesseurs"><i>Professeur</i></a></li>
+            <li><a href="AdminProfDispo"><i>Professeur Dispo</i></a></li>
+            <li><a href="AdminCours"><i>Cours</i></a></li>
+            <li><a href="AdminSession"><i>Session</i></a></li>
+            <li><a href="/logout"><i>Déconnexion</i></a></li>
+        </ul>
+
+
+       </div>
+
+        <div class="main">
+            <h1>Ajouter un professeur</h1>
+
+           {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="notification-banner">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+           <form method="POST" action="/Creerprofesseur">
+           <div class="info">
+               <div class="left">
+               <h2>Prenom:</h2><br>
+               <label for="PrenomProf"></label><input id="PrenomProf" name="PrenomProf" type="text" class="input" placeholder="Prenom"><br>
+               <br><h2>Nom:</h2><br>
+               <label for="NomProf"></label><input id="NomProf" name="NomProf" type="text" class="input" placeholder="Nom"><br>
+               <br><h2>Courriel:</h2><br>
+               <label for="CourrielProf"></label><input id="CourrielProf" name="CourrielProf" type="email" class="input" placeholder="Courriel"><br>
+               </div>
+                   <div class="right">
+                   <h2>Mot de passe:</h2><br>
+                   <label for="motDePasse"></label><input id="mot_de_passe" name="motDePasse" type="password" class="input" placeholder="Mot de passe"><br>
+                   <br><h2>Téléphone:</h2><br>
+                   <label for="TélProf"></label><input id="TélProf" name="TélProf" type="text" class="input" placeholder="Téléphone"><br>
+                </div>
+               <br><br><button class="button-send" type="submit"> Envoyer </button>
+
+               <br><br>
+               </div>
+               </form>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>

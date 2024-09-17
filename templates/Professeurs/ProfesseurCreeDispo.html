@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajout dispos</title>
+    <link rel="stylesheet" href="/static/css/AccountPage.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header"></div>
+    <div class="sidebar">
+        <header><a href="/"><img src="/static/images/img.png" class="logo"></a></header>
+
+        <ul>
+            <li><a href="ProfesseurHoraire"><i>Horaire</i></a></li>
+            <li><a href="ProfesseurEleves"><i>Eleves</i></a></li>
+            <li><a href="ProfesseurDispo"><i>Disponibilites</i></a></li>
+            <li><a href="/logout"><i>Déconnexion</i></a></li>
+        </ul>
+
+    </div>
+
+    <div class="main">
+        <h1>Ajouter des disponibilités</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="notification-banner">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+        <div class="form-container">
+        <form id="availability-form" method="POST" action="/add_availability">
+
+        <div class="form-group">
+            <label for="jour">Jour:</label>
+            <select id="jour" name="jour" required>
+            <option value="lundi">Lundi</option>
+            <option value="mardi">Mardi</option>
+            <option value="mercredi">Mercredi</option>
+            <option value="jeudi">Jeudi</option>
+            <option value="vendredi">Vendredi</option>
+            <option value="samedi">Samedi</option>
+            <option value="dimanche">Dimanche</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="heure_debut">Heure de début:</label>
+            <input type="time" id="heure_debut" name="heure_debut" required>
+        </div>
+
+        <div class="form-group">
+            <label for="heure_fin">Heure de fin:</label>
+            <input type="time" id="heure_fin" name="heure_fin" required>
+        </div>
+
+         <button class="button-send" type="submit"> Envoyer </button>
+        </form></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

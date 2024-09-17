@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=IBM+Plex+Sans:wght@100;200;600&family=Lato:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+position:relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur semi-transparente (noir avec une opacité de 50%) */
+}
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Couleur du texte */
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 85%;
+    margin: auto;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px; /* Réduire la largeur du logo selon vos besoins */
+    cursor:pointer;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.navbar ul li::after {
+    content: ''; height: 3px; width: 0;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+
+
+.Home-Page-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.Home-Page-content h1 {
+
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  text-align: left; /* Alignement du texte à gauche */
+}
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 35px;
+    border-radius: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    background: red;
+    transition: all 0.3s ease;
+    margin-top: 20px; /* Ajoute un espace entre le titre et le bouton */
+    cursor: pointer;
+
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.bottom-right-content {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    text-align: right;
+    font-size: 11px;
+}
+
+.event-container {
+  font-family: "IBM Plex Sans", sans-serif;
+
+  margin-left:10px;
+    text-align: left;
+}
+
+.event-container h3.year {
+    margin-top: 20px;
+    position: relative;
+    left:0;
+    font-size: 40px;
+    text-align: left;
+    border-bottom: 1px solid #e8dede;
+}
+
+.event-container .event {
+  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  border-radius: 8px;
+  margin: 32px 0;
+}
+
+.event .event-left {
+  background: #222;
+  min-width: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  padding: 8px 48px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px 0 0 8px;
+}
+
+.event .event-left .date {
+  font-size: 56px;
+}
+
+.event .event-left .month {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.event .event-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.event .event-right h3.event-title {
+  font-size: 24px;
+  margin: 24px 0 10px 0;
+  color: #218bbb;
+  text-transform: uppercase;
+}
+
+.event .event-right .event-timing {
+  background: #fff8ba;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  padding: 8px;
+  border-radius: 16px;
+  margin: 24px 0;
+  font-size: 14px;
+}
+
+.event .event-right .event-timing img {
+  height: 20px;
+  padding-right: 8px;
+}
+
+.video-presentation h1{
+    margin-top: 20px;
+    position: relative;
+    left:0;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #e8dede;
+    margin-bottom: 20px; /* Ajoute un espace sous la bordure */
+
+}
+.video-presentation {
+
+text-align: center;
+}
+
+.video-presentation iframe {
+
+     border-radius: 15px;
+
+}
+
+.bottom-content {
+    padding: 15px;
+    background-color: #faf2f2;
+    width: 97%;
+    float: left;
+    font-size: 12px;
+}
+
+
+
+
+.address-container {
+    margin-left: 10px;
+}
+.address-container h2{
+    margin-top: 10px;
+}
+
+.office-hours h2 {
+    margin-top: 0;
+}
+
+.address-container p,
+.office-hours p {
+    margin-bottom: 10px;
+}
+
+p {
+    clear: both;
+}
+
+@media (max-width: 550px) {
+    .event {
+        flex-direction: column;
+    }
+
+    .event .event-left {
+        padding: 0;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .event .event-left .event-date .date,
+    .event .event-left .event-date .month {
+        display: inline-block;
+        font-size: 24px;
+    }
+}
+
+.sidebar{
+    position:fixed;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background: #666666;
+}
+
+.sidebar header{
+    text-align: center;
+    line-height: 70px;
+    background: #cccccc;
+    height: 6.5%;
+}
+
+.sidebar ul a{
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 55px;
+    font-size: 15px;
+    color: white;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid black;
+}
+
+.account_page{
+    padding-left:150px;
+}
+.account_page h2 {
+    margin-left: 10px;
+}
+
+.account_page h3 {
+    margin-left: 9%;
+}
+
+.account_page div.box{
+    width: 80%;
+    height: 250px;
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}

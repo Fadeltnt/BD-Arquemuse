@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/AccountPage.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header"></div>
+         <div class="sidebar">
+    <header><a href="/"><img src="/static/images/img.png" class="logo"></a></header>
+
+        <ul>
+         <li><a href="AdminEleves"><i>Eleves</i></a></li>
+            <li><a href="AdminElevesDispo"><i>Eleves Dispo</i></a></li>
+           <li><a href="AdminProfesseurs"><i>Professeur</i></a></li>
+            <li><a href="AdminProfDispo"><i>Professeur Dispo</i></a></li>
+            <li><a href="AdminCours"><i>Cours</i></a></li>
+            <li><a href="AdminSession"><i>Session</i></a></li>
+            <li><a href="/logout"><i>Déconnexion</i></a></li>
+        </ul>
+
+
+       </div>
+
+       <div class="main">
+           <h1><i>Création de Cours</i></h1>
+           <h3>Veuillez remplir les information suivante pour créer un cours </h3>
+           {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="notification-banner">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+           <form method="POST" action="/CreerCours">
+           <div class="info">
+               <div class="left">
+               <h2>Instrument:</h2>
+                   <label for="InstrumentCours"></label><select id="InstrumentCours" name="InstrumentCours" class="form-group" required>
+            <option value="Accordéon">Accordéon</option>
+            <option value="Batterie">Batterie</option>
+            <option value="Chant">Chant</option>
+            <option value="Clarinette">Clarinette</option>
+            <option value="Djembe">Djembe</option>
+            <option value="Flute traversière">Flute traversière</option>
+            <option value="Guitare">Guitare</option>
+            <option value="Piano">Piano</option>
+            <option value="Saxophone">Saxophone</option>
+            <option value="Trompette">Trompette</option>
+            <option value="Clarinette">Clarinette</option>
+            <option value="Violon">Violon</option>
+            <option value="Violoncelle">Violoncelle</option>
+            <option value="Ukulele">Ukulele</option>
+            </select>
+              <br><h2>Jour:</h2>
+                   <label for="JourCours"></label><select id="JourCours" name="JourCours" class="form-group" required>
+            <option value="Lundi">Lundi</option>
+            <option value="Mardi">Mardi</option>
+            <option value="Mercredi">Mercredi</option>
+            <option value="Jeudi">Jeudi</option>
+            <option value="Vendredi">Vendredi</option>
+            <option value="Samedi">Samedi</option>
+            <option value="Dimanche">Dimanche</option>
+            </select>
+             <br><h2>Heure:</h2><br>
+               <label for="HeureCours"></label><input id="HeureCours" name="HeureCours" type="time" class="input" placeholder="Heure"><br>
+               <br><h2>Durée:</h2><br>
+               <select id="DureeCours" name="DureeCours" class="form-group" required>
+                    <option value = 30>30 minutes</option>
+                    <option value = 60>60 minutes</option>
+                </select>
+
+
+                   <br><br><button class="button-send" type="submit"> Envoyer </button>
+
+
+               </div>
+               <div class="right">
+                   <h2>ID de l'élève:</h2><br>
+                   <label for="eleveid"></label><input id="eleveid" name="eleveid" type="number" class="input" placeholder="ID de l'élève"><br><br>
+                   <h2>ID du professeur:</h2><br>
+                   <label for="profid"></label><input id="profid" name="profid" type="number" class="input" placeholder="ID du professeur"><br><br>
+                   <h2>ID de la session:</h2><br>
+                   <label for="sessionid"></label><input id="sessionid" name="sessionid" type="number" class="input" placeholder="ID de la session"><br>
+               </div>
+
+               </div>
+               </form>
+               </div>
+          </div>
+
+
+
+</body>
+</html>

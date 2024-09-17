@@ -1,0 +1,308 @@
+/* Importation des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=IBM+Plex+Sans:wght@100;200;600&family=Lato:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
+
+/* Réinitialisation des marges et des rembourrages pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans", sans-serif; /* Utilisation de la police par défaut */
+}
+
+.navbar {
+    background: #ffffff; /* couleur de fond de la barre de navigation */
+    color: #fff; /* couleur du texte de la barre de navigation */
+    padding: 10px; /* espacement intérieur de la barre de navigation */
+    width: 100%; /* occuper toute la largeur de l'écran */
+    position: fixed; /* fixer la barre de navigation en haut */
+    top: 0; /* positionner la barre de navigation au sommet de la fenêtre */
+    z-index: 1000; /* assurer que la barre de navigation soit au-dessus des autres éléments */
+}
+
+.navbar header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* Style du logo */
+.logo {
+    width: 120px;
+    cursor: pointer; /* Curseur de souris en forme de main lorsqu'on survole le logo */
+}
+
+/* Style du conteneur principal */
+.container {
+    display: grid; /* Utilisation d'un affichage en grille pour organiser les éléments */
+    grid-template-columns: 150px 1fr 1fr 1fr; /* Définition des colonnes de la grille */
+    grid-template-rows: 0.2fr 3fr; /* Définition des lignes de la grille */
+    grid-template-areas:
+        "sidebar header header header" /* Répartition des zones dans la grille */
+        "sidebar main main main";
+    height: 100vh; /* Hauteur du conteneur égal à la hauteur de la fenêtre */
+}
+
+/* Style de la barre latérale */
+.sidebar {
+    grid-area: sidebar; /* Définition de la zone de la grille où se trouve la barre latérale */
+    position: fixed; /* Positionnement fixe pour rester visible lors du défilement */
+    left: 0; /* Alignement à gauche */
+    width: 150px; /* Largeur de la barre latérale */
+    height: 100%; /* Hauteur de la barre latérale égale à la hauteur du conteneur */
+    background: #666666; /* Couleur de fond de la barre latérale */
+}
+
+/* Style de l'en-tête de la barre latérale */
+.sidebar header {
+    text-align: center; /* Centrage du texte */
+    line-height: 70px; /* Hauteur de ligne égale à la hauteur de l'en-tête */
+    background: #cccccc; /* Couleur de fond de l'en-tête */
+    height: 6.5%; /* Hauteur de l'en-tête */
+}
+
+/* Style des liens dans la barre latérale */
+.sidebar ul a {
+    text-decoration: none; /* Suppression du soulignement du lien */
+    display: block; /* Affichage en bloc pour occuper toute la largeur */
+    height: 100%; /* Hauteur égale à la hauteur de chaque élément */
+    width: 100%; /* Largeur égale à la largeur de chaque élément */
+    line-height: 55px; /* Hauteur de ligne égale à la hauteur de chaque élément */
+    font-size: 15px; /* Taille de police */
+    color: white; /* Couleur du texte */
+    font-weight: bold; /* Police en gras */
+    padding-left: 20px; /* Espacement à gauche */
+    border-top: 1px solid rgba(255, 255, 255, .1); /* Bordure supérieure */
+    border-bottom: 1px solid black; /* Bordure inférieure */
+    box-sizing: border-box; /* Inclusion de la bordure dans la taille totale */
+}
+
+/* Style au survol des liens dans la barre latérale */
+.sidebar ul a:hover {
+    background-color: rgba(0, 0, 0, 0.23); /* Couleur de fond au survol */
+}
+
+
+.header{
+    grid-area: header;
+    height: 47px;
+    background-color: #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+
+}
+
+.main{
+     grid-area: main;
+    background-color: white;
+}
+
+
+.main h1,
+.main h3{
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 80px;
+}
+
+.info input{
+    height: 45px;
+  width: 70%;
+  outline: none;
+  font-size: 16px;
+  border-radius:20px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.info{
+    margin-left: 80px;
+}
+
+.infocompte{
+    margin-left: 80px;
+}
+
+.infocompte input {
+    height: 45px;
+  width: 35%;
+  outline: none;
+  font-size: 16px;
+  border-radius:20px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.button{
+     text-decoration: none;
+   width: 15%;
+   border-radius: 20px;
+   border: none;
+   color: #fff;
+   font-size: 20px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+    transition: all 0.3s ease;
+   background: red;
+}
+
+.button:hover{
+    background-color: rgba(0, 0, 0, 0.23);
+}
+
+.button-send {
+     text-decoration: none;
+   width: 200px;
+   border-radius: 20px;
+   border: none;
+   color: #fff;
+   font-size: 20px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+    transition: all 0.3s ease;
+   background: red;
+    margin-left: 36%;
+}
+
+.left button{
+   width: 200px;
+   border-radius: 20px;
+   border: none;
+   color: #fff;
+   font-size: 20px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+    transition: all 0.3s ease;
+   background: red;
+    margin-left: 70%;
+}
+
+.button-send:hover{
+    background-color: rgba(0, 0, 0, 0.23);
+}
+
+.left{
+    float: left;
+    padding-right: 10px;
+}
+
+.right{
+     float: left;
+}
+
+.left, .right {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+
+.checkbox input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.text {
+    margin-left: 80px;
+}
+
+.notification-banner {
+    background-color: #ffcccc; /* Couleur de fond de la bannière */
+    color: #ff0000; /* Couleur du texte */
+    padding: 10px; /* Espacement intérieur de la bannière */
+    border: 2px solid #ff0000; /* Bordure */
+    border-radius: 5px; /* Bord arrondi */
+    margin-bottom: 10px; /* Marge inférieure pour séparation */
+}
+
+.table__row:nth-child(even){
+    background-color: #e5e5e5;
+}
+
+.table__header{
+    text-align: left;
+}
+
+.table__cell{
+    padding: 8px;
+}
+
+.table{
+    border-spacing: 0;
+    background-color: #f5f5f5;
+    margin-left: 80px;
+}
+
+/* Style pour le conteneur principal */
+.main {
+    margin-top: 20px; /* Espacement vers le haut */
+    margin-left: 20px; /* Espacement vers la gauche */
+}
+
+/* Style pour le formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style pour les conteneurs titre-champ */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 70%;
+}
+
+/* Style pour les titres */
+label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* Style pour les champs de saisie */
+input[type="time"],
+select {
+    height: 45px;
+    width: 70%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 20px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Style pour le bouton */
+button[type="submit"] {
+     text-decoration: none;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: red;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(0, 0, 0, 0.23);
+}
+
+

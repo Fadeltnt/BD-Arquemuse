@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/AccountPage.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header"></div>
+    <div class="sidebar">
+        <header><a href="/"><img src="/static/images/img.png" class="logo"></a></header>
+
+        <ul>
+            <li><a href="EtudiantCours"><i>Cours</i></a></li>
+            <li><a href="EtudiantDispo"><i>Dispos</i></a></li>
+            <li><a href="/logout"><i>Déconnexion</i></a></li>
+        </ul>
+       </div>
+
+       <div class="header">
+       </div>
+
+       <div class="main">
+           <h1><i>Inscription</i></h1>
+           {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="notification-banner">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+           <h3>Veuillez remplir les information suivante et nous allons vous contacter par téléphone pour confirmer votre inscription! </h3>
+          <form method="POST" action="/Inscription">
+           <div class="info">
+               <div class="left">
+               <h2>Nom:</h2><br>
+               <label for="Nominscription"></label><input id="Nominscription" name="Nominscription" type="text" class="input" placeholder="Nom"><br>
+               <br><h2>Prénom:</h2><br>
+               <label for="Prenominscription"></label><input id="Prenominscription" name="Prenominscription" type="text" class="input" placeholder="Prenom"><br>
+               <br><h2>Age:</h2><br>
+               <label for="naissance"></label><input id="naissance" name="naissance" type="number" class="input" placeholder="Age"><br>
+               </div>
+               <div class="right">
+                   <h2>Instrument:</h2><br>
+                   <label for="instrument"></label><select id="instrument" name="instrument" class="form-group" required>
+            <option value="Accordéon">Accordéon</option>
+            <option value="Batterie">Batterie</option>
+            <option value="Chant">Chant</option>
+            <option value="Clarinette">Clarinette</option>
+            <option value="Djembe">Djembe</option>
+            <option value="Flute traversière">Flute traversière</option>
+            <option value="Guitare">Guitare</option>
+            <option value="Piano">Piano</option>
+            <option value="Saxophone">Saxophone</option>
+            <option value="Trompette">Trompette</option>
+            <option value="Clarinette">Clarinette</option>
+            <option value="Violon">Violon</option>
+            <option value="Violoncelle">Violoncelle</option>
+            <option value="Ukulele">Ukulele</option>
+            </select><br><br>
+                   <h2>Durée:</h2><br>
+                   <select id="DureeCours" name="DureeCours" class="input">
+                    <option value = 30>30 minutes</option>
+                    <option value = 60>60 minutes</option>
+                </select>
+               <br><br>
+               </div>
+               <button class="button-send" type="submit"> Envoyer </button>
+               </div>
+               </form>
+               </div>
+          </div>
+
+
+
+</body>
+</html>

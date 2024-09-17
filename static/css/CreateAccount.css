@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=IBM+Plex+Sans:wght@100;200;600&family=Lato:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: white;
+   font-family: "IBM Plex Sans", sans-serif;
+}
+.navbar {
+     position: absolute;
+    top: 0;
+    left: 0;
+    width: 85%;
+    margin: auto;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.logo {
+    width: 120px; /* Réduire la largeur du logo selon vos besoins */
+    cursor:pointer;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+
+}
+
+.navbar ul li::after {
+    content: ''; height: 3px; width: 0;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+
+
+
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+
+}
+.container .title{
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius:10px;
+  padding-left: 15px;
+
+}
+
+
+
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 20px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: red;
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: black;
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+.notification-banner-container {
+    position: fixed; /* Position fixe par rapport à la fenêtre */
+    top: 100px; /* Positionner la bannière légèrement en dessous du haut de l'écran */
+    left: 50%; /* Positionner horizontalement au milieu de l'écran */
+    transform: translateX(-50%); /* Centrer horizontalement */
+    width: 100%; /* Largeur de la bannière sur toute la largeur de l'écran */
+    z-index: 9999; /* Assurer que la bannière apparaît au-dessus des autres éléments */
+}
+
+.notification-banner {
+    background-color: #ffcccc; /* Nouvelle couleur de fond de la bannière */
+    color: #ff0000; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur de la bannière */
+    border: 2px solid #ff0000; /* Bordure */
+    border-radius: 5px; /* Bord arrondi */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Centrage du texte */
+}
+
+
+
+/*Loginpage css*/
+
+.login-container {
+
+            border-radius: 5px;
+            padding: 20px;
+
+            text-align: center;
+        }
+
+        p{
+            margin-top: 40px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="email"],
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: red;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+        }
+
+
+.Resume {
+    margin-left: 20px; /* Déplace le résumé vers la gauche */
+    text-align: justify; /* Justifie le texte */
+    max-width: 800px; /* Limite la largeur maximale du texte */
+
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Student</title>
+  <link rel="stylesheet" href="/static/css/CreateAccount.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a href="/"><img src="/static/images/img.png" class="logo" alt=""></a>
+  </div>
+
+  <div class="container">
+    <div class="title">CREATION D'UN COMPTE ETUDIANT</div>
+
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+      <div class="notification-banner">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+
+      {% endif %}
+      {% endwith %}
+
+    <div class="content">
+
+      <form method="POST" action="/register">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nom</span>
+            <input id="nom" type="text" name="nom" placeholder="Entrer votre nom" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Prénom</span>
+            <input id="prenom" type="text" name="prenom" placeholder="Enter votre prénom" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input id="email" type="text" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Téléphone</span>
+            <input id="telephone" type="text" name="telephone" placeholder="Entrer votre numéro" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Mot de passe</span>
+            <input id="motDePasse" type="password" name="motDePasse" placeholder="Entrer votre mot de passe" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Confirmer mot de passe</span>
+            <input id="confirmationMotDePasse" type="password" name="confirmationMotDePasse" placeholder="Confirmer votre mot de passe" required>
+          </div>
+
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Créer un compte">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
