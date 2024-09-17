@@ -1,5 +1,6 @@
 from datetime import timedelta
 from functools import wraps
+
 import pymysql
 from flask import Flask, redirect, url_for, flash
 from flask_login import LoginManager, current_user
@@ -37,6 +38,7 @@ def create_app():
             user = User(user_data[0], user_data[1], user_data[2], user_data[3], user_data[4])
             user.role = get_user_role(user_data[1])
             return user
+
         else:
             return None
 
@@ -47,3 +49,6 @@ def create_app():
     app.register_blueprint(main_blueprint)
 
     return app
+
+# Cette ligne est essentielle pour Gunicorn
+app = create_app()
